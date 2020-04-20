@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>kriss&#39;s Blog</title>
+  
+  <subtitle>like Like LIKE</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.kriss.pub/"/>
+  <updated>2020-04-20T11:08:25.039Z</updated>
+  <id>http://www.kriss.pub/</id>
+  
+  <author>
+    <name>kriss</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh cli 命令</title>
+    <link href="http://www.kriss.pub/2020/03/20/ssh/"/>
+    <id>http://www.kriss.pub/2020/03/20/ssh/</id>
+    <published>2020-03-20T05:49:21.000Z</published>
+    <updated>2020-04-20T11:08:25.039Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 连接（需要输入密码）</span></div><div class="line">ssh user@hostname -p port</div><div class="line"></div><div class="line"><span class="comment"># 生成密钥对</span></div><div class="line">ssh-keygen</div><div class="line"></div><div class="line"><span class="comment"># 将密钥对复制到远程主机以达到免密登录（输入密码）</span></div><div class="line">ssh-copy-id user@hostname -p port</div><div class="line"></div><div class="line"><span class="comment"># 通过 ~/.ssh/config 配置后直接命名登录</span></div><div class="line"><span class="comment"># 配置内容</span></div><div class="line">Host [name]</div><div class="line">    HostName [ip or domian]</div><div class="line">    User [user]</div><div class="line">    Port [default 22]</div><div class="line"><span class="comment"># 登录</span></div><div class="line">ssh [name]</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+      
+    
+    </summary>
+    
+      <category term="server" scheme="http://www.kriss.pub/categories/server/"/>
+    
+    
+      <category term="ssh" scheme="http://www.kriss.pub/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx-正向代理</title>
+    <link href="http://www.kriss.pub/2020/02/10/nginx-%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    <id>http://www.kriss.pub/2020/02/10/nginx-正向代理/</id>
+    <published>2020-02-10T06:04:45.000Z</published>
+    <updated>2020-04-20T11:08:25.038Z</updated>
+    
+    <content type="html"><![CDATA[<p>示例如下：</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server</div><div class="line">&#123;</div><div class="line">    <span class="attribute">listen</span> <span class="number">8032</span>;</div><div class="line">    </div><div class="line">    <span class="attribute">location</span> / &#123;</div><div class="line">      <span class="attribute">resolver</span> <span class="number">8.8.8.8</span>;</div><div class="line">      <span class="attribute">proxy_pass</span> <span class="variable">$scheme</span>://<span class="variable">$http_host</span><span class="variable">$request_uri</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p><em>注意</em>：nginx 默认的正向代理仅能代理<code>http</code>，不能代理<code>https</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;示例如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class
+      
+    
+    </summary>
+    
+      <category term="server" scheme="http://www.kriss.pub/categories/server/"/>
+    
+    
+      <category term="nginx" scheme="http://www.kriss.pub/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jira-安装与迁移</title>
+    <link href="http://www.kriss.pub/2019/09/23/jira-%E5%AE%89%E8%A3%85%E4%B8%8E%E8%BF%81%E7%A7%BB/"/>
+    <id>http://www.kriss.pub/2019/09/23/jira-安装与迁移/</id>
+    <published>2019-09-23T05:24:24.000Z</published>
+    <updated>2020-04-20T11:08:25.038Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="jira-安装"><a href="#jira-安装" class="headerlink" title="jira 安装"></a>jira 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">docker run \</div><div class="line">    -v /data/jira-home:/var/atlassian/application-data/jira \</div><div class="line">    --name=<span class="string">"jira"</span> \</div><div class="line">    -d \</div><div class="line">    -p 8087:8080 \</div><div class="line">    atlassian/jira-software:8.4.1</div></pre></td></tr></table></figure><a id="more"></a><h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><ul><li><p>备份原系统，将原系统的 export 下的 zip 放到新系统的 import 目录下</p></li><li><p>进行到数据时使用数据恢复</p></li><li><p>数据恢复时使用新的 license（申请免费的30天）</p></li><li><p>在数据库修改时使用mysql</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker cp /data/jira/mysql-connector-java-8.0.17.jar jira:/opt/atlassian/jira/lib</div></pre></td></tr></table></figure><ul><li>进入系统后将破解文件复制到 docker 内，然后重启容器</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker cp /data/jira/atlassian-extras-3.2.jar jira:/opt/atlassian/jira/WEB-INF/lib/atlassian-extras-3.2.jar</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;jira-安装&quot;&gt;&lt;a href=&quot;#jira-安装&quot; class=&quot;headerlink&quot; title=&quot;jira 安装&quot;&gt;&lt;/a&gt;jira 安装&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;docker run \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -v /data/jira-home:/var/atlassian/application-data/jira \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    --name=&lt;span class=&quot;string&quot;&gt;&quot;jira&quot;&lt;/span&gt; \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -d \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    -p 8087:8080 \&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    atlassian/jira-software:8.4.1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="server" scheme="http://www.kriss.pub/categories/server/"/>
+    
+    
+      <category term="jira" scheme="http://www.kriss.pub/tags/jira/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos7 bitwarden 迁移</title>
+    <link href="http://www.kriss.pub/2019/05/02/bitwarden-%E8%BF%81%E7%A7%BB/"/>
+    <id>http://www.kriss.pub/2019/05/02/bitwarden-迁移/</id>
+    <published>2019-05-02T08:12:11.000Z</published>
+    <updated>2020-04-20T11:08:25.037Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="bitwarden-介绍"><a href="#bitwarden-介绍" class="headerlink" title="bitwarden 介绍"></a>bitwarden 介绍</h2><p>是一款开源的密码管理软件，支持多平台</p><p>这里只介绍宝塔版本的迁移（自用）</p><blockquote><p><a href="https://bitwarden.com/" target="_blank" rel="external">官网</a></p></blockquote><a id="more"></a><h2 id="docker-安装"><a href="#docker-安装" class="headerlink" title="docker 安装"></a>docker 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">yum install -y yum-utils \</div><div class="line">    device-mapper-persistent-data \</div><div class="line">    lvm2</div><div class="line"></div><div class="line">yum-config-manager \</div><div class="line">    --add-repo \</div><div class="line">    https://download.docker.com/linux/centos/docker-ce.repo</div><div class="line"></div><div class="line">yum install docker-ce docker-ce-cli containerd.io</div></pre></td></tr></table></figure><blockquote><p><a href="https://docs.docker.com/install/linux/docker-ce/centos/" target="_blank" rel="external">参考 docker 官网</a></p></blockquote><h2 id="docker-compose-安装"><a href="#docker-compose-安装" class="headerlink" title="docker-compose 安装"></a>docker-compose 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">curl -L <span class="string">"https://github.com/docker/compose/releases/download/1.24.1/docker-compose-<span class="variable">$(uname -s)</span>-<span class="variable">$(uname -m)</span>"</span> -o /usr/<span class="built_in">local</span>/bin/docker-compose</div><div class="line"></div><div class="line">chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</div></pre></td></tr></table></figure><blockquote><p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="external">参考 docker 官网</a></p></blockquote><h2 id="启动dokcer并允许自启"><a href="#启动dokcer并允许自启" class="headerlink" title="启动dokcer并允许自启"></a>启动dokcer并允许自启</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">systemctl <span class="built_in">enable</span> docker</div><div class="line"></div><div class="line">service docker start</div></pre></td></tr></table></figure><h2 id="安装bitwarden"><a href="#安装bitwarden" class="headerlink" title="安装bitwarden"></a>安装bitwarden</h2><ol><li>在 root 目录下</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -Lso bitwarden.sh https://go.btwrdn.co/bw-sh \</div><div class="line">    &amp;&amp; chmod +x bitwarden.sh</div></pre></td></tr></table></figure><ol><li>解压 Path_bwdata_20190901_221851.tar.gz 到 /root 目录下</li></ol><blockquote><p><a href="https://help.bitwarden.com/article/install-on-premise/" target="_blank" rel="external">参考 bitwarden 官网</a></p></blockquote><h2 id="启动bitwarden"><a href="#启动bitwarden" class="headerlink" title="启动bitwarden"></a>启动bitwarden</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./bitwarden.sh start</div></pre></td></tr></table></figure><h2 id="宝塔操作"><a href="#宝塔操作" class="headerlink" title="宝塔操作"></a>宝塔操作</h2><ol><li><p>创建网站，反向代理到 <code>http://localhost:8188</code>，ssl开启并强制https</p></li><li><p>安装七牛云，开启定时任务同步备份目录 <code>/root/bwdata</code> 到七牛云</p></li><li><p>如果七牛云同步出错解决方案: <a href="https://www.bt.cn/bbs/forum.php?mod=viewthread&amp;tid=35628&amp;highlight=%E4%B8%83%E7%89%9B%E4%BA%91" target="_blank" rel="external">宝塔bbs</a></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;bitwarden-介绍&quot;&gt;&lt;a href=&quot;#bitwarden-介绍&quot; class=&quot;headerlink&quot; title=&quot;bitwarden 介绍&quot;&gt;&lt;/a&gt;bitwarden 介绍&lt;/h2&gt;&lt;p&gt;是一款开源的密码管理软件，支持多平台&lt;/p&gt;
+&lt;p&gt;这里只介绍宝塔版本的迁移（自用）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://bitwarden.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="server" scheme="http://www.kriss.pub/categories/server/"/>
+    
+    
+      <category term="bitwarden" scheme="http://www.kriss.pub/tags/bitwarden/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssr 安装</title>
+    <link href="http://www.kriss.pub/2019/04/23/ssr-install/"/>
+    <id>http://www.kriss.pub/2019/04/23/ssr-install/</id>
+    <published>2019-04-23T02:32:09.000Z</published>
+    <updated>2020-04-20T11:08:25.037Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Check-SSR-service"><a href="#Check-SSR-service" class="headerlink" title="Check SSR service"></a>Check SSR service</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ps -ef | grep shadowsocks</div><div class="line"></div><div class="line"><span class="comment"># kill PID</span></div><div class="line"></div><div class="line">service ShadowsocksR status</div><div class="line"></div><div class="line"><span class="comment"># service ShadowsocksR stop</span></div></pre></td></tr></table></figure><h1 id="Update-2019-09-27"><a href="#Update-2019-09-27" class="headerlink" title="Update 2019-09-27"></a>Update 2019-09-27</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh </div><div class="line"></div><div class="line">chmod +x ssr.sh</div><div class="line"></div><div class="line">bash ssr.sh</div></pre></td></tr></table></figure><a id="more"></a><h1 id="DROP"><a href="#DROP" class="headerlink" title="DROP"></a>DROP</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</div><div class="line"></div><div class="line">chmod +x shadowsocks-all.sh</div><div class="line"></div><div class="line">./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Check-SSR-service&quot;&gt;&lt;a href=&quot;#Check-SSR-service&quot; class=&quot;headerlink&quot; title=&quot;Check SSR service&quot;&gt;&lt;/a&gt;Check SSR service&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ps -ef | grep shadowsocks&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# kill PID&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;service ShadowsocksR status&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# service ShadowsocksR stop&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;Update-2019-09-27&quot;&gt;&lt;a href=&quot;#Update-2019-09-27&quot; class=&quot;headerlink&quot; title=&quot;Update 2019-09-27&quot;&gt;&lt;/a&gt;Update 2019-09-27&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chmod +x ssr.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;bash ssr.sh&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="skill" scheme="http://www.kriss.pub/categories/skill/"/>
+    
+    
+      <category term="ssr" scheme="http://www.kriss.pub/tags/ssr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh 开启密码登录</title>
+    <link href="http://www.kriss.pub/2019/03/03/ssh-password-login/"/>
+    <id>http://www.kriss.pub/2019/03/03/ssh-password-login/</id>
+    <published>2019-03-03T03:28:01.000Z</published>
+    <updated>2020-04-20T11:08:25.037Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装-ssh-服务"><a href="#安装-ssh-服务" class="headerlink" title="安装 ssh 服务"></a>安装 ssh 服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt remove openssh-server</div><div class="line"></div><div class="line">apt install openssh-server</div></pre></td></tr></table></figure><a id="more"></a><h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_confg</div></pre></td></tr></table></figure><p>修改：</p><p>允许root登录：<code>PermitRootLogin  yes</code></p><p>允许密码登录：<code>PasswordAuthentication yes</code></p><h2 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装-ssh-服务&quot;&gt;&lt;a href=&quot;#安装-ssh-服务&quot; class=&quot;headerlink&quot; title=&quot;安装 ssh 服务&quot;&gt;&lt;/a&gt;安装 ssh 服务&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apt remove openssh-server&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;apt install openssh-server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="skill" scheme="http://www.kriss.pub/categories/skill/"/>
+    
+    
+      <category term="ssh" scheme="http://www.kriss.pub/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker 执行宿主机命令的方案</title>
+    <link href="http://www.kriss.pub/2018/10/12/docker%E6%89%A7%E8%A1%8C%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%91%BD%E4%BB%A4%E7%9A%84%E6%96%B9%E6%A1%88/"/>
+    <id>http://www.kriss.pub/2018/10/12/docker执行宿主机命令的方案/</id>
+    <published>2018-10-12T08:12:11.000Z</published>
+    <updated>2020-04-20T11:08:25.037Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>docker 内远程调用宿主机上的服务</p></li><li><p>ssh 远程连接到宿主机，执行命令</p></li></ul><p>方案均未尝试，但应该可行</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;docker 内远程调用宿主机上的服务&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ssh 远程连接到宿主机，执行命令&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;方案均未尝试，但应该可行&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="server" scheme="http://www.kriss.pub/categories/server/"/>
+    
+    
+      <category term="docker" scheme="http://www.kriss.pub/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx 请求转发(代理转发)</title>
+    <link href="http://www.kriss.pub/2018/10/08/nginx-%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91/"/>
+    <id>http://www.kriss.pub/2018/10/08/nginx-请求转发/</id>
+    <published>2018-10-08T05:06:40.000Z</published>
+    <updated>2020-04-20T11:08:25.036Z</updated>
+    
+    <content type="html"><![CDATA[<p>示例如下：</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">upstream</span> xibaoyinhang-m &#123;</div><div class="line">  ip_hash;</div><div class="line">  <span class="attribute">server</span> <span class="number">47.96.82.75:10081</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="section">server</span> &#123;</div><div class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</div><div class="line">  <span class="attribute">server_name</span> xbyh-m.ytalg.com;</div><div class="line">  <span class="attribute">location</span> / &#123;</div><div class="line">    <span class="attribute">proxy_pass</span> http://xibaoyinhang-m;</div><div class="line"><span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</div><div class="line"><span class="attribute">proxy_set_header</span> X-Real-Ip <span class="variable">$remote_addr</span>;</div><div class="line"><span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$remote_addr</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;示例如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class
+      
+    
+    </summary>
+    
+      <category term="server" scheme="http://www.kriss.pub/categories/server/"/>
+    
+    
+      <category term="nginx" scheme="http://www.kriss.pub/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql5.7 密码错误</title>
+    <link href="http://www.kriss.pub/2018/09/15/mysql5-7-%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/"/>
+    <id>http://www.kriss.pub/2018/09/15/mysql5-7-密码错误/</id>
+    <published>2018-09-15T03:22:48.000Z</published>
+    <updated>2020-04-20T11:08:25.036Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>SQLSTATE[HY000] [1862] Your password has expired. To log in you must change it using a client that supports expired passwords.</p></blockquote><p>该问题是由于 mysql 5.7 版本新增自动遗忘密码策略（default_password_lifetime）造成的，mysql 5.7.4-5.7.10 默认为 360（意思就是每年都必须换密码），之后的版本已改为默认0（不自动遗忘）。</p><p>解决方案：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div><div class="line">SET PASSWORD = PASSWORD(<span class="string">'xxxxxxxx'</span>);</div></pre></td></tr></table></figure><p>参考文档：</p><p><a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_default_password_lifetime" target="_blank" rel="external">mysql 5.7文档</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;SQLSTATE[HY000] [1862] Your password has expired. To log in you must change it using a client that supports expired password
+      
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.kriss.pub/categories/web/"/>
+    
+    
+      <category term="mysql" scheme="http://www.kriss.pub/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>eval 的替换，以及在 vue 中动态触发某个字符串事件</title>
+    <link href="http://www.kriss.pub/2018/08/29/vue-eval/"/>
+    <id>http://www.kriss.pub/2018/08/29/vue-eval/</id>
+    <published>2018-08-29T03:22:48.000Z</published>
+    <updated>2020-04-20T11:08:25.036Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>动态触发一个字符串事件，一般使用 <code>eval</code>，但是由于该方法权限太大，会导致安全隐患，因此极不推荐使用</p></blockquote><h2 id="代替-eval-的方法"><a href="#代替-eval-的方法" class="headerlink" title="代替 eval 的方法"></a>代替 eval 的方法</h2><h3 id="1-处理-json"><a href="#1-处理-json" class="headerlink" title="1.处理 json"></a>1.处理 json</h3><p>使用 <code>JSON.parse()</code> 代替</p><h3 id="2-对象动态取值和赋值"><a href="#2-对象动态取值和赋值" class="headerlink" title="2.对象动态取值和赋值"></a>2.对象动态取值和赋值</h3><p>例如：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">    x: <span class="string">'xxxx'</span>,</div><div class="line">    y: <span class="string">'yyyy'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> b = <span class="string">'x'</span></div><div class="line"><span class="comment">// 想要获取 a 下面的 b 的值</span></div><div class="line"><span class="built_in">eval</span>(<span class="string">'a.'</span> + b)</div><div class="line"><span class="comment">// 可以使用下面替换</span></div><div class="line">a[b]</div></pre></td></tr></table></figure><h3 id="3-处理请求返回的结果，需要执行-js-的情况"><a href="#3-处理请求返回的结果，需要执行-js-的情况" class="headerlink" title="3.处理请求返回的结果，需要执行 js 的情况"></a>3.处理请求返回的结果，需要执行 js 的情况</h3><p>使用 <code>eval</code> 的变种来处理</p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">evil</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> fn = <span class="built_in">Function</span>;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> fn(<span class="string">'return '</span> + str)();</div><div class="line">&#125;</div></pre></td></tr></table></figure><a id="more"></a><h2 id="vue-中动态触发事件"><a href="#vue-中动态触发事件" class="headerlink" title="vue 中动态触发事件"></a>vue 中动态触发事件</h2><p>例子：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(method, methodName) in map"</span> @<span class="attr">click</span>=<span class="string">"triggerMethod(method, id)"</span>&gt;</span>&#123;&#123;methodName&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="actionscript">    name: <span class="string">'Test'</span>,</span></div><div class="line"><span class="undefined">    data() &#123;</span></div><div class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></div><div class="line"><span class="undefined">        id: 1,</span></div><div class="line"><span class="undefined">        map: &#123;</span></div><div class="line"><span class="actionscript">          a: <span class="string">'clickA'</span>,</span></div><div class="line"><span class="actionscript">          b: <span class="string">'clickB'</span>,</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;,</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      triggerMethod(method, id) &#123;</span></div><div class="line"><span class="actionscript">        <span class="comment">// 下面代码等同于 eval(`this.$&#123;method&#125;($&#123;id&#125;)`)</span></span></div><div class="line"><span class="actionscript">        <span class="keyword">this</span>[method](id)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      clickA(id) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'a'</span>, id)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      clickB(id) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'b'</span>, id)</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure><p>主要是通过<code>第二种</code>方式解决的，因为在 vue 中需要使用<code>this</code>这个上下文，所以不能用<code>第三种</code>方案</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;动态触发一个字符串事件，一般使用 &lt;code&gt;eval&lt;/code&gt;，但是由于该方法权限太大，会导致安全隐患，因此极不推荐使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;代替-eval-的方法&quot;&gt;&lt;a href=&quot;#代替-eval-的方法&quot; class=&quot;headerlink&quot; title=&quot;代替 eval 的方法&quot;&gt;&lt;/a&gt;代替 eval 的方法&lt;/h2&gt;&lt;h3 id=&quot;1-处理-json&quot;&gt;&lt;a href=&quot;#1-处理-json&quot; class=&quot;headerlink&quot; title=&quot;1.处理 json&quot;&gt;&lt;/a&gt;1.处理 json&lt;/h3&gt;&lt;p&gt;使用 &lt;code&gt;JSON.parse()&lt;/code&gt; 代替&lt;/p&gt;
+&lt;h3 id=&quot;2-对象动态取值和赋值&quot;&gt;&lt;a href=&quot;#2-对象动态取值和赋值&quot; class=&quot;headerlink&quot; title=&quot;2.对象动态取值和赋值&quot;&gt;&lt;/a&gt;2.对象动态取值和赋值&lt;/h3&gt;&lt;p&gt;例如：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x: &lt;span class=&quot;string&quot;&gt;&#39;xxxx&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    y: &lt;span class=&quot;string&quot;&gt;&#39;yyyy&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; b = &lt;span class=&quot;string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 想要获取 a 下面的 b 的值&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;eval&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;a.&#39;&lt;/span&gt; + b)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 可以使用下面替换&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;a[b]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;3-处理请求返回的结果，需要执行-js-的情况&quot;&gt;&lt;a href=&quot;#3-处理请求返回的结果，需要执行-js-的情况&quot; class=&quot;headerlink&quot; title=&quot;3.处理请求返回的结果，需要执行 js 的情况&quot;&gt;&lt;/a&gt;3.处理请求返回的结果，需要执行 js 的情况&lt;/h3&gt;&lt;p&gt;使用 &lt;code&gt;eval&lt;/code&gt; 的变种来处理&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;evil&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; fn = &lt;span class=&quot;built_in&quot;&gt;Function&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; fn(&lt;span class=&quot;string&quot;&gt;&#39;return &#39;&lt;/span&gt; + str)();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.kriss.pub/categories/web/"/>
+    
+    
+      <category term="vue" scheme="http://www.kriss.pub/tags/vue/"/>
+    
+      <category term="js" scheme="http://www.kriss.pub/tags/js/"/>
+    
+      <category term="eval" scheme="http://www.kriss.pub/tags/eval/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jquery 各种情况下的事件叠加问题</title>
+    <link href="http://www.kriss.pub/2018/07/25/jquery-on-off/"/>
+    <id>http://www.kriss.pub/2018/07/25/jquery-on-off/</id>
+    <published>2018-07-25T04:52:29.000Z</published>
+    <updated>2020-04-20T11:08:25.035Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><code>事件叠加</code>指的是同一个事件（比如 <code>click</code>）被注册（或绑定）了多次，导致触发事件的时候触发了多次。</p></blockquote><p>举例如下：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"me"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">$(<span class="string">'.me'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="undefined">    alert(1);</span></div><div class="line"><span class="undefined">&#125;);</span></div><div class="line"><span class="javascript">$(<span class="string">'.me'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="undefined">    alert(1);</span></div><div class="line"><span class="undefined">&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure><p>上方代码点击按钮时会弹出<code>两次1</code>，该例子就是事件叠加。</p><a id="more"></a><h2 id="事件叠加发生的情况"><a href="#事件叠加发生的情况" class="headerlink" title="事件叠加发生的情况"></a>事件叠加发生的情况</h2><p>正常开发我们都不会写出像上面一样的代码，但是很多的事件叠加都是在我们不经意间写出来的，尤其发生在，<strong>在调用的方法内注册事件</strong></p><p>比如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"me"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="javascript">    $(<span class="string">'.me'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="undefined">        alert(1);</span></div><div class="line"><span class="undefined">    &#125;);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined">start();</span></div><div class="line"><span class="undefined">start();</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure><p>上面这份代码说明了这样子调用也会被注册两次。</p><h2 id="jquery-on-下导致的事件叠加"><a href="#jquery-on-下导致的事件叠加" class="headerlink" title="jquery on 下导致的事件叠加"></a>jquery on 下导致的事件叠加</h2><p>如果说上面的写法你也不会出现，那么这个写法你可能写过。</p><p>比如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"showButton()"</span>&gt;</span>显示<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"hideButton()"</span>&gt;</span>隐藏<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">showButton</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">    <span class="comment">// 将按钮添加到页面上</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).html(<span class="string">'&lt;button class="me"&gt;点我&lt;/button&gt;'</span>);</span></div><div class="line"><span class="actionscript">    <span class="comment">// 由于是动态增加的按钮，所以要用 on 来绑定动态事件</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).on(<span class="string">'click'</span>, <span class="string">'.me'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="undefined">        alert(1);</span></div><div class="line"><span class="undefined">    &#125;);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">hideButton</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">    <span class="comment">// 将按钮删除</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).html(<span class="string">''</span>);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure><p>上面的例子进行如下操作就会产生事件叠加：</p><p>点击<code>显示</code>-&gt;点击<code>点我</code>(弹出1)-&gt;点击<code>隐藏</code>-&gt;点击<code>显示</code>-&gt;点击<code>点我</code>(弹出<code>两次1</code>)</p><p>上面的例子错误的解决方案可以是：</p><ol><li>将点击事件的注册放到方法外部（<code>推荐</code>）</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">showButton</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">    <span class="comment">// 将按钮添加到页面上</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).html(<span class="string">'&lt;button class="me"&gt;点我&lt;/button&gt;'</span>);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">hideButton</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">    <span class="comment">// 将按钮删除</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).html(<span class="string">''</span>);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="comment">// 由于是动态增加的按钮，所以要用 on 来绑定动态事件</span></span></div><div class="line"><span class="javascript">$(<span class="string">'.container'</span>).on(<span class="string">'click'</span>, <span class="string">'.me'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="undefined">    alert(1);</span></div><div class="line"><span class="undefined">&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure><ol><li>在隐藏的时候把事件解绑掉</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">showButton</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">    <span class="comment">// 将按钮添加到页面上</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).html(<span class="string">'&lt;button class="me"&gt;点我&lt;/button&gt;'</span>);</span></div><div class="line"><span class="actionscript">    <span class="comment">// 由于是动态增加的按钮，所以要用 on 来绑定动态事件</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).on(<span class="string">'click'</span>, <span class="string">'.me'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="undefined">        alert(1);</span></div><div class="line"><span class="undefined">    &#125;);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">hideButton</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">    <span class="comment">// 将按钮删除</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).html(<span class="string">''</span>);</span></div><div class="line"><span class="actionscript">    <span class="comment">// 解绑原事件</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.container'</span>).off(<span class="string">'click'</span>, <span class="string">'.me'</span>);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure><h2 id="iframe-下不经意的事件叠加"><a href="#iframe-下不经意的事件叠加" class="headerlink" title="iframe 下不经意的事件叠加"></a>iframe 下不经意的事件叠加</h2><p>有时候我们在操作 iframe 时，经常需要操作<code>父页面</code>的js，来达到类似<code>全局方法</code>，或者<code>页面离开但方法继续</code>的需求</p><p>这就经常会导致<code>意想不到</code>和<code>难以排查</code>的事件叠加</p><p>比如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- iframe 父页面:main.html --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">name</span>=<span class="string">"my-iframe"</span> <span class="attr">src</span>=<span class="string">"a.html"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"a.html"</span> <span class="attr">target</span>=<span class="string">"my-iframe"</span>&gt;</span>a页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"b.html"</span> <span class="attr">target</span>=<span class="string">"my-iframe"</span>&gt;</span>b页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal"</span> <span class="attr">style</span>=<span class="string">"display:none;"</span>&gt;</span>我是弹出框<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- iframe 子页面1:a.html --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"showModal()"</span>&gt;</span>显示<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">showModal</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">    <span class="keyword">var</span> html = <span class="string">'我是页面1'</span> +</span></div><div class="line"><span class="handlebars"><span class="xml">        '<span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"save"</span>&gt;</span>保存<span class="tag">&lt;/<span class="name">button</span>&gt;</span>';</span></span></div><div class="line"><span class="javascript">    $(<span class="string">'.modal'</span>, <span class="built_in">window</span>.parent.document).html(html).show();</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="comment">// 由于是动态增加的按钮，所以要用 on 来绑定动态事件</span></span></div><div class="line"><span class="javascript">$(<span class="string">'.modal'</span>, <span class="built_in">window</span>.parent.document).on(<span class="string">'click'</span>, <span class="string">'.save'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="undefined">    alert(1);</span></div><div class="line"><span class="undefined">&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- iframe 子页面2:b.html --&gt;</span></div><div class="line"><span class="comment">&lt;!-- B 页面什么都不用处理 --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure><p>上面的代码出现事件叠加的操作如下：</p><p>iframe默认显示a.html-&gt;点击b链接-&gt;显示b页面-&gt;点击a链接-&gt;显示a页面-&gt;点击<code>显示</code>-&gt;显示<code>保存</code>按钮-&gt;点击<code>保存</code>-&gt;弹出<code>两次1</code></p><p>简化触发的流程就是进入了两次 a.html ，触发了两次 save 的事件绑定，即</p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.modal'</span>, <span class="built_in">window</span>.parent.document).on(<span class="string">'click'</span>, <span class="string">'.save'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>这段代码执行了两次。</p><p>那么解决这个问题我们使用先解绑再绑定的方式是不是能解决呢？比如下方代码：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.modal'</span>, <span class="built_in">window</span>.parent.document).off(<span class="string">'click'</span>, <span class="string">'.save'</span>).on(<span class="string">'click'</span>, <span class="string">'.save'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>答案是<strong>不能</strong></p><p>正确的解决方案，使用父页面的 jquery 对象来注册事件，即：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.parent.$(<span class="string">'.modal'</span>).off(<span class="string">'click'</span>, <span class="string">'.save'</span>).on(<span class="string">'click'</span>, <span class="string">'.save'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p><strong>这段代码（正确的）和上一段的代码（错误的）区别在于错误的使用的是子页面的 <code>$</code>，然后通过 <code>window.parent.document</code> 来定义作用域为父页面，正确的使用的 <code>window.parent.$</code>。</strong></p><ul><li>$(‘.modal’, window.parent.document)</li></ul><p>代表从子页面开始，jquery 对象用的是本页面的，向上（父页面）查找 class 是 modal 的元素，事件是绑定到当前页面的 jquery 对象上的。</p><ul><li>window.parent.$(‘.modal’)</li></ul><p>代表从父页面开始，jquery 对象用的是父页面的，查找 class 是 modal 的元素，事件绑定是绑定到父页面的 jquery 对象上的。</p><p>这两者实质上是不一样的，a.html 子页面每加载一次就会产生一个新的 jquery 对象，所以使用 <code>$(&#39;.modal&#39;, window.parent.document)</code> 去 off 一个事件是找不到上一个页面 on 出来的事件的。</p><h3 id="jquery-查看元素绑定的事件的方法"><a href="#jquery-查看元素绑定的事件的方法" class="headerlink" title="jquery 查看元素绑定的事件的方法"></a>jquery 查看元素绑定的事件的方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$._data($(<span class="string">'body'</span>, <span class="built_in">window</span>.top.document)[<span class="number">0</span>],<span class="string">'events'</span>);</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;事件叠加&lt;/code&gt;指的是同一个事件（比如 &lt;code&gt;click&lt;/code&gt;）被注册（或绑定）了多次，导致触发事件的时候触发了多次。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;举例如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;me&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;点我&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&#39;.me&#39;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;    alert(1);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&#39;.me&#39;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;    alert(1);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上方代码点击按钮时会弹出&lt;code&gt;两次1&lt;/code&gt;，该例子就是事件叠加。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.kriss.pub/categories/web/"/>
+    
+    
+      <category term="js" scheme="http://www.kriss.pub/tags/js/"/>
+    
+      <category term="jquery" scheme="http://www.kriss.pub/tags/jquery/"/>
+    
+      <category term="iframe" scheme="http://www.kriss.pub/tags/iframe/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Flow 开发流程</title>
+    <link href="http://www.kriss.pub/2018/07/18/git-flow/"/>
+    <id>http://www.kriss.pub/2018/07/18/git-flow/</id>
+    <published>2018-07-18T05:29:16.000Z</published>
+    <updated>2020-04-20T11:08:25.035Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>git flow 用于多人开发</p></blockquote><p>以下简化说明开发的方式，以下文档假设<code>新功能分支</code>(next release) 为 <code>develop</code>，<code>产品分支</code>(production releases) 为 <code>master</code></p><a id="more"></a><h2 id="1-正常开发新功能-feature"><a href="#1-正常开发新功能-feature" class="headerlink" title="1. 正常开发新功能(feature)"></a>1. 正常开发新功能(feature)</h2><ol><li><p>在 develop 分支上 <code>start feature</code></p></li><li><p>完成开发后 <code>commit</code>(不要push)</p></li><li><p><code>finish feature</code>，会回到 develop 分支</p></li><li><p>在 develop 分支上 <code>push</code> 代码</p></li></ol><p><strong>注意</strong></p><ul><li><p>finish feature 之前可以有多次 commit</p></li><li><p>如果这个分支功能需要暂时性发布，使用 publish feature</p></li><li><p>不允许直接在 develop 分支上修改代码</p></li><li><p>如果需要同时开发多个功能，都从 develop 分支上 start feature</p></li></ul><h2 id="2-多个分支需要紧急修复同一-bug-时-hotfix"><a href="#2-多个分支需要紧急修复同一-bug-时-hotfix" class="headerlink" title="2. 多个分支需要紧急修复同一 bug 时(hotfix)"></a>2. 多个分支需要紧急修复同一 bug 时(hotfix)</h2><ol><li><p>在 develop 分支上 <code>start hotfix</code></p></li><li><p>完成开发后 <code>commit</code>(不要push)</p></li><li><p><code>finish hotfix</code>，会自动合并代码到 develop 和 master 分支</p></li><li><p>切换到 develop 和 master 分支上分别 <code>push</code> 代码</p></li></ol><h2 id="3-需要发布代码-release"><a href="#3-需要发布代码-release" class="headerlink" title="3. 需要发布代码(release)"></a>3. 需要发布代码(release)</h2><ol><li><p>在 develop 分支上 <code>start release</code></p></li><li><p>完成测试和代码审核等操作，期间该修改 bug 修改 bug</p></li><li><p>完成后 <code>commit</code>(不要push)</p></li><li><p><code>finish release</code>，会自动合并代码到 develop 和 master 分支</p></li><li><p>切换到 develop 和 master 分支上分别 <code>push</code> 代码</p></li></ol><blockquote><p>说明：关于master分支：原则上禁止人为对 master 分支做任何操作，master 分支的代码来源于 hotfix 和 release 操作之后</p></blockquote><p>参考文档：</p><p><a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow" target="_blank" rel="external">git-flow 的工作流程</a></p><p><a href="https://www.cnblogs.com/lcngu/p/5770288.html" target="_blank" rel="external">git flow的使用</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;git flow 用于多人开发&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以下简化说明开发的方式，以下文档假设&lt;code&gt;新功能分支&lt;/code&gt;(next release) 为 &lt;code&gt;develop&lt;/code&gt;，&lt;code&gt;产品分支&lt;/code&gt;(production releases) 为 &lt;code&gt;master&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="skill" scheme="http://www.kriss.pub/categories/skill/"/>
+    
+    
+      <category term="git" scheme="http://www.kriss.pub/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php trait 引发的错误：xxx and xxx define the same property ($xxx) in the composition of xxx</title>
+    <link href="http://www.kriss.pub/2018/03/14/php-trait/"/>
+    <id>http://www.kriss.pub/2018/03/14/php-trait/</id>
+    <published>2018-03-14T10:41:21.000Z</published>
+    <updated>2020-04-20T11:08:25.034Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>xxx and xxx define the same property ($xxx) in the composition of xxx</p></blockquote><p>该错误是由于 php 的 trait 不支持属性名（成员变量）重复导致的，且当前没有太好的解决办法。</p><a id="more"></a><h2 id="trait-可以有自己的成员变量，但是无法被覆盖"><a href="#trait-可以有自己的成员变量，但是无法被覆盖" class="headerlink" title="trait 可以有自己的成员变量，但是无法被覆盖"></a>trait 可以有自己的成员变量，但是无法被覆盖</h2><p>trait 覆盖关系是 当前类 &gt; trait &gt; 基类，对于方法冲突，trait 提供了 <code>insteadof</code> 和 <code>as</code> 的解决方案，但是对于<code>成员变量</code>，却只会报错。</p><p>举例如下：</p><h3 id="正常代码："><a href="#正常代码：" class="headerlink" title="正常代码："></a>正常代码：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">trait</span> Base &#123;</div><div class="line"><span class="keyword">public</span> $a = <span class="string">'base'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">Base</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$o = <span class="keyword">new</span> MyClass();</div><div class="line"><span class="keyword">echo</span> $o-&gt;a; <span class="comment">// base</span></div></pre></td></tr></table></figure><h3 id="报错代码："><a href="#报错代码：" class="headerlink" title="报错代码："></a>报错代码：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">trait</span> Base &#123;</div><div class="line"><span class="keyword">public</span> $a = <span class="string">'base'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">Base</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> $a = <span class="string">'myA'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$o = <span class="keyword">new</span> MyClass();</div><div class="line"><span class="keyword">echo</span> $o-&gt;a; <span class="comment">// Fatal error: MyClass and Base define the same property ($a) in the composition of MyClass. However, the definition differs and is considered incompatible. Class was composed in test.php on line 6</span></div></pre></td></tr></table></figure><h3 id="折中的解决方案"><a href="#折中的解决方案" class="headerlink" title="折中的解决方案:"></a>折中的解决方案:</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">trait</span> Base &#123;</div><div class="line"><span class="keyword">public</span> $a = <span class="string">'base'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBaseClass</span> </span>&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">Base</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">MyBaseClass</span></span>&#123;</div><div class="line">    <span class="keyword">public</span> $a = <span class="string">'myA'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$o = <span class="keyword">new</span> MyClass();</div><div class="line"><span class="keyword">echo</span> $o-&gt;a; <span class="comment">// myA</span></div></pre></td></tr></table></figure><h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>虽然上方的折中办法可以解决这个问题，但非常不推荐使用（因为如果这样的话跟我直接把 trait 的代码写到 MyBaseClass 里面岂不是没区别了吗？），所以最终给的方式是，在定义 trait 时，<code>尽量不要使用成员变量</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;xxx and xxx define the same property ($xxx) in the composition of xxx&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;该错误是由于 php 的 trait 不支持属性名（成员变量）重复导致的，且当前没有太好的解决办法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="php" scheme="http://www.kriss.pub/categories/php/"/>
+    
+    
+      <category term="trait" scheme="http://www.kriss.pub/tags/trait/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本地开发 composer 包</title>
+    <link href="http://www.kriss.pub/2018/02/22/develop-composer/"/>
+    <id>http://www.kriss.pub/2018/02/22/develop-composer/</id>
+    <published>2018-02-22T10:11:01.000Z</published>
+    <updated>2020-04-20T11:08:25.034Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>composer 包开发的方式有两种：1.使用 dev-master 分支，2.使用 path 引用本地代码</p></blockquote><p>第一种方式的弊端在于必须提交代码到代码仓库，然后再更新 composer 包，由于 github 的原因，国内下载可能还比较慢，严重阻碍开发进度。</p><a id="more"></a><p>那么第二种怎么做呢？</p><h2 id="1-配置-composer-json，增加一份-repositories，如："><a href="#1-配置-composer-json，增加一份-repositories，如：" class="headerlink" title="1. 配置 composer.json，增加一份 repositories，如："></a>1. 配置 composer.json，增加一份 repositories，如：</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">"repositories"</span>: &#123;</div><div class="line">    <span class="string">"kriss/yii2-common-class"</span>: &#123;</div><div class="line">        <span class="string">"type"</span>: <span class="string">"path"</span>,</div><div class="line">        <span class="string">"url"</span>: <span class="string">"D:\\WWW\\yii2-common-class"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>注意：</p><ul><li><p>type 为 <code>path</code></p></li><li><p>url 为 <code>代码的本地路径</code>(可以使用相对路劲)</p></li></ul><h2 id="2-使用-composer-更新依赖"><a href="#2-使用-composer-更新依赖" class="headerlink" title="2. 使用 composer 更新依赖"></a>2. 使用 composer 更新依赖</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php composer.phar require kriss/yii2-common-class:dev-master -vvv</div></pre></td></tr></table></figure><p>注意：</p><ul><li><p>使用 require 或者 update 都行</p></li><li><p>包的版本一定是 <code>dev-xxx</code>,如果正在开发的分支是 <code>master</code>,则为 <code>dev-master</code>,如果正在开发的分支为 <code>develop</code>,则为 <code>dev-develop</code></p></li></ul><h2 id="3-开发完成后"><a href="#3-开发完成后" class="headerlink" title="3. 开发完成后"></a>3. 开发完成后</h2><p>开发完成后记得提交代码，发布 release，然后使用如下代码更新为 stable 版本</p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php composer.phar <span class="keyword">require</span> kriss/yii2-common-<span class="class"><span class="keyword">class</span> -<span class="title">vvv</span></span></div></pre></td></tr></table></figure><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank" rel="external">https://getcomposer.org/doc/05-repositories.md#path</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;composer 包开发的方式有两种：1.使用 dev-master 分支，2.使用 path 引用本地代码&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;第一种方式的弊端在于必须提交代码到代码仓库，然后再更新 composer 包，由于 github 的原因，国内下载可能还比较慢，严重阻碍开发进度。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="php" scheme="http://www.kriss.pub/categories/php/"/>
+    
+    
+      <category term="composer" scheme="http://www.kriss.pub/tags/composer/"/>
+    
+      <category term="packagist" scheme="http://www.kriss.pub/tags/packagist/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm 各种镜像地址修改</title>
+    <link href="http://www.kriss.pub/2018/01/05/npm-registry/"/>
+    <id>http://www.kriss.pub/2018/01/05/npm-registry/</id>
+    <published>2018-01-05T12:11:01.000Z</published>
+    <updated>2020-04-20T11:08:25.034Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="修改-nmprc-文件："><a href="#修改-nmprc-文件：" class="headerlink" title="修改 .nmprc 文件："></a>修改 .nmprc 文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">registry=https://registry.npm.taobao.org</div><div class="line">sass_binary_site=https://npm.taobao.org/mirrors/node-sass/</div><div class="line">phantomjs_cdnurl=http://npm.taobao.org/mirrors/phantomjs</div><div class="line">ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;修改-nmprc-文件：&quot;&gt;&lt;a href=&quot;#修改-nmprc-文件：&quot; class=&quot;headerlink&quot; title=&quot;修改 .nmprc 文件：&quot;&gt;&lt;/a&gt;修改 .nmprc 文件：&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.kriss.pub/categories/web/"/>
+    
+    
+      <category term="gist" scheme="http://www.kriss.pub/tags/gist/"/>
+    
+      <category term="npm" scheme="http://www.kriss.pub/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sql server 奇怪的错误（将 varchar 值转换成数据类型 int 时失败，非列类型错误）</title>
+    <link href="http://www.kriss.pub/2017/12/13/sqlserver-error/"/>
+    <id>http://www.kriss.pub/2017/12/13/sqlserver-error/</id>
+    <published>2017-12-13T11:45:01.000Z</published>
+    <updated>2020-04-20T11:08:25.033Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>错误：在将 varchar 值 ‘12834.13’ 转换成数据类型 int 时失败</p></blockquote><p>发生情况：</p><ol><li><p>单独插入一行数据时提示这个错误。</p></li><li><p>批量插入数据时出现这个错误提示。</p></li></ol><a id="more"></a><p>原因：</p><ol><li><p>一般是由于，列类型错误，比如定义的列类型为 int, 但是插入数据时插入的是像 ‘12834.13’ 的字符串或带小数的值。</p></li><li><p>这个比较特殊，因为你会发现比如自己定义的列类型为 numeric(或 decimal)，并且是有小数位两位的，但是就是插入不进去，一直提示数据转成 int 时出错。这个的原因是由于类似以下的写法导致的：</p></li></ol><p>假设有表 A，字段 x，类型为 numeric(19,2)</p><p>语句如下：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> A ([x]) <span class="keyword">values</span> (<span class="string">'152.52'</span>)           ## 插入成功</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> A ([x]) <span class="keyword">values</span> (<span class="string">'152.52'</span>) (<span class="string">'23.2'</span>)  ## 插入成功</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> A ([x]) <span class="keyword">values</span> (<span class="string">'152.52'</span>) (<span class="number">0</span>)       ## 插入失败</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> A ([x]) <span class="keyword">values</span> (<span class="number">152.52</span>) (<span class="number">0</span>)         ## 插入成功</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> A ([x]) <span class="keyword">values</span> (<span class="number">0</span>)                  ## 插入成功</div></pre></td></tr></table></figure><p>错误原因出来了：SqlServer 在进行批量插入时，会将所有没一行的数据，按照列进行全部转成统一的数值类型，很不幸的是，在上面的语句处理中，第三条它会把 ‘152.52’ 这个类 varchar 的转成跟后面 0 一致的 int，所以就报错了。</p><p>解决方案：</p><ol><li><p>该错误比较容易解决：只要将列类型写对就行。</p></li><li><p>该错误建议解决方案为：将所有插入的值全部 string 化，即不管数值是 0 还是 11.02 还是 11 全部写成 ‘0’, ‘11.02’, ‘11’</p></li></ol><p>解决语句：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> A ([x]) <span class="keyword">values</span> (<span class="string">'152.52'</span>) (<span class="string">'0'</span>)     ## 插入成功</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;错误：在将 varchar 值 ‘12834.13’ 转换成数据类型 int 时失败&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;发生情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;单独插入一行数据时提示这个错误。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;批量插入数据时出现这个错误提示。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.kriss.pub/categories/web/"/>
+    
+    
+      <category term="sql server" scheme="http://www.kriss.pub/tags/sql-server/"/>
+    
+      <category term="mssql" scheme="http://www.kriss.pub/tags/mssql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP 自动部署方案</title>
+    <link href="http://www.kriss.pub/2017/11/20/php-deploy/"/>
+    <id>http://www.kriss.pub/2017/11/20/php-deploy/</id>
+    <published>2017-11-20T12:40:36.000Z</published>
+    <updated>2020-04-20T11:08:25.033Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>php 是一门脚本语言，脚本语言的特点就是不需要编译，因此 PHP 的代码发布非常快，一般只需要两部：1.本地 git commit &amp;&amp; git push，2.服务器上 git pull。</p></blockquote><p>但是一但中间环节需要做的时候比较复杂的时候，该过程就比较枯燥而且繁琐了。举个例子：我本地写完代码，commit and push 了代码，但是本次代码涉及到要修改数据库、要修改线上环境的本地配置、要更新依赖（composer）等等，那么我就需要1.登录服务器，2.执行 git pull，3.执行 migrate 脚本，4.执行环境切换脚本，5.执行 composer install。一次还行，多次的话就繁琐了。</p><a id="more"></a><h2 id="方案一：使用-DaoCloud-完成完整的自动化部署"><a href="#方案一：使用-DaoCloud-完成完整的自动化部署" class="headerlink" title="方案一：使用 DaoCloud 完成完整的自动化部署"></a>方案一：使用 DaoCloud 完成完整的自动化部署</h2><blockquote><p><a href="http://daocloud.io" target="_blank" rel="external">DaoCloud</a> 是一个在线的 Docker 容器平台，提供完整的自动化部署过程，当前支持与很多平台对接，包括国内的 <a href="https://coding.net" target="_blank" rel="external">Coding</a>。</p></blockquote><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ol><li><p>在 DaoCloud 上新建一个项目，设置代码源</p></li><li><p>设置项目的流程阶段，尤其是构建阶段</p></li><li><p>提交代码，只要满足你设定的构建任务即可自动完成构建，自动部署等操作</p></li></ol><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul><li><p>稳定：DaoCloud 算是目前国内提供 Docker 服务比较早和比较稳定的平台，比较可靠。</p></li><li><p>安全：能够完整保留镜像版本，有助于版本回退等操作快速切换。</p></li><li><p>跨平台型和可移植性高：这是 Docker 的优点，只要构建完了镜像，到处都可以使用。</p></li></ul><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul><li><p>构建速度慢：尤其在项目较大时，DaoCloud 每次需要 clone 完整的代码，然后执行完整的构建流程（即使已经用上相当多的缓存），构建过程相对较慢。</p></li><li><p>门槛较高：需要非常熟悉 Docker，对于没有该方面能力的人基本是不能完成该操作的。</p></li></ul><h2 id="方案二：使用-webhook-触发项目部署"><a href="#方案二：使用-webhook-触发项目部署" class="headerlink" title="方案二：使用 webhook 触发项目部署"></a>方案二：使用 webhook 触发项目部署</h2><blockquote><p>Webhook 允许第三方应用监听代码托管平台上的特定事件，在这些事件发生时通过 HTTP POST 方式通知( 超时5秒) 到第三方应用指定的 Web URL。 例如项目有新的内容 Push，或是 Merge Request 有更新等。 WebHook 可方便用户实现自动部署，自动测试，自动打包，监控项目变化等。目前大部分代码托管平台都已经支持该方式。</p></blockquote><h3 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h3><ol><li><p>找到代码托管平台的项目 webhook 的设置的地方，填写 token 和 Web URL，开启 Webhook。</p></li><li><p>编写 deploy.php 脚本，用于接收处理 Webhook 请求，<a href="https://github.com/krissss/php-webhook-deploy" target="_blank" rel="external">参考</a></p></li><li><p>提交代码，只要编写的脚本正确，即可自动完成构建，自动部署等操作</p></li></ol><h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul><li><p>简单：脚本编写简单，且一般编写一次之后所有项目均可使用，例如上面的参考例子。</p></li><li><p>快速：发布快速，因为该过程只做 git pull 和 composer install 等操作，会完全使用本机已经存在的文件和 composer 缓存，速度极快。</p></li></ul><h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul><li><p>项目可移植性差：由于一般写这种脚本都是基于 linux 的（windows 也能写），所以在不同平台得写对应的部署脚本。</p></li><li><p>兼容性差：可能由于像权限等啥的问题，导致服务器不能完成自动部署的操作，或者由于脚本写的不够完善，导致脚本跑了一般产生问题（但这都是脚本的锅啊。。。）。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;php 是一门脚本语言，脚本语言的特点就是不需要编译，因此 PHP 的代码发布非常快，一般只需要两部：1.本地 git commit &amp;amp;&amp;amp; git push，2.服务器上 git pull。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但是一但中间环节需要做的时候比较复杂的时候，该过程就比较枯燥而且繁琐了。举个例子：我本地写完代码，commit and push 了代码，但是本次代码涉及到要修改数据库、要修改线上环境的本地配置、要更新依赖（composer）等等，那么我就需要1.登录服务器，2.执行 git pull，3.执行 migrate 脚本，4.执行环境切换脚本，5.执行 composer install。一次还行，多次的话就繁琐了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="php" scheme="http://www.kriss.pub/categories/php/"/>
+    
+    
+      <category term="docker" scheme="http://www.kriss.pub/tags/docker/"/>
+    
+      <category term="webhook" scheme="http://www.kriss.pub/tags/webhook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>socks 代理转 http 代理</title>
+    <link href="http://www.kriss.pub/2017/11/10/proxy-socks2http/"/>
+    <id>http://www.kriss.pub/2017/11/10/proxy-socks2http/</id>
+    <published>2017-11-10T07:20:40.000Z</published>
+    <updated>2020-04-20T11:08:25.033Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>因为个人大多使用的是 <code>shadowsocks</code> 来科学上网的，但是某些地方只能使用 <code>http_proxy</code> 来做代理，因此找到此方案来解决</p></blockquote><a id="more"></a><ul><li><p>shadowsocks 安装配置（略）</p></li><li><p>代理转发工具 <a href="http://www.privoxy.org/" target="_blank" rel="external">privoxy</a>，支持多平台</p></li></ul><p>安装过程略。</p><p>安装完成后修改配置文件 <code>privoxy/config</code>，在最底下加入：</p><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">listen-address :<span class="number">8118</span> # <span class="number">127.0</span><span class="meta">.0</span><span class="meta">.1</span>:<span class="number">8118</span> 或 <span class="number">0.0</span><span class="meta">.0</span><span class="meta">.0</span>:<span class="number">8118</span> 或 :<span class="number">8118</span></div><div class="line"># 转发 socks5 到 http，socks5 代理端口为 <span class="number">1080</span></div><div class="line">forward-socks5 / <span class="number">127.0</span><span class="meta">.0</span><span class="meta">.1</span>:<span class="number">1080</span> .</div></pre></td></tr></table></figure><p>然后重启一下 privoxy 就行了。</p><p>在所有可以设置 <code>http_proxy</code> 的地方设置下代理就行。</p><blockquote><p>参考<a href="https://blog.phpgao.com/privoxy-shadowsocks.html" target="_blank" rel="external">使用Privoxy将socks5代理转为http代理</a></p></blockquote><p><strong>其他代理工具</strong></p><ul><li><a href="http://blog.csdn.net/gengxuelei/article/details/52514603" target="_blank" rel="external">proxychains 命令行代理工具</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;因为个人大多使用的是 &lt;code&gt;shadowsocks&lt;/code&gt; 来科学上网的，但是某些地方只能使用 &lt;code&gt;http_proxy&lt;/code&gt; 来做代理，因此找到此方案来解决&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="skill" scheme="http://www.kriss.pub/categories/skill/"/>
+    
+    
+      <category term="proxy" scheme="http://www.kriss.pub/tags/proxy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker volume 权限问题</title>
+    <link href="http://www.kriss.pub/2017/11/10/docker-volume-permissions/"/>
+    <id>http://www.kriss.pub/2017/11/10/docker-volume-permissions/</id>
+    <published>2017-11-10T06:05:48.000Z</published>
+    <updated>2020-04-20T11:08:25.032Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>docker volume 数据卷挂载宿主机时的权限问题处理方式</p></blockquote><a id="more"></a><h2 id="方案一：gosu"><a href="#方案一：gosu" class="headerlink" title="方案一：gosu"></a>方案一：gosu</h2><p><strong>多大型的服务组件都采用该方案，比如：</strong></p><ul><li><p><a href="https://github.com/docker-library/mysql/blob/master/5.7/Dockerfile" target="_blank" rel="external">mysql</a></p></li><li><p><a href="https://github.com/docker-library/redis/blob/master/3.2/Dockerfile" target="_blank" rel="external">redis</a></p></li><li><p><a href="https://github.com/docker-library/mongo/blob/master/3.5/Dockerfile" target="_blank" rel="external">mongo</a></p></li><li><p><a href="https://github.com/docker-library/elasticsearch/blob/master/5/docker-entrypoint.sh" target="_blank" rel="external">elasticsearch</a></p></li></ul><p><strong>使用该方案的方式如下：</strong></p><p>1.创建一个 user/group</p><p>2.安装 <a href="https://github.com/tianon/gosu" target="_blank" rel="external">gosu</a>(国内环境可以需要翻墙)</p><p>3.配置一个目录，比如 <code>/data</code> 作为volume，如：<code>VOLUME /data</code></p><p>4.创建一个 <code>docker-entrypoint.sh</code> 文件,并设置为 <code>ENTRYPOINT</code> 的脚本，如：<code>ENTRYPOINT [&quot;docker-entrypoint.sh&quot;]</code></p><p>5.在 <code>docker-entrypoint.sh</code> 中写脚本，使得所有命令都通过 <code>gosu</code> 执行，如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># allow the container to be started with `--user`</span></div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> = <span class="string">'redis-server'</span> -a <span class="string">"<span class="variable">$(id -u)</span>"</span> = <span class="string">'0'</span> ]; <span class="keyword">then</span></div><div class="line">    chown -R redis .</div><div class="line">    <span class="built_in">exec</span> gosu redis <span class="string">"<span class="variable">$0</span>"</span> <span class="string">"<span class="variable">$@</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure><blockquote><p>参考：<a href="https://stackoverflow.com/questions/23544282/what-is-the-best-way-to-manage-permissions-for-docker-shared-volumes?answertab=votes#answer-29799703" target="_blank" rel="external">stackoverflow</a></p></blockquote><p><strong>适用范围：</strong></p><p>像 mysql、redis 这些依靠脚本执行的命令的容器环境，可以完美解决容器之间共享目录的问题。</p><p>不适合完整项目下的缓存目录的挂载（因为对于这些目录的加载，操作等，都不需要经过脚本文件的执行（此处也可能有，我自己没发现））。</p><h2 id="方案二：改目录权限"><a href="#方案二：改目录权限" class="headerlink" title="方案二：改目录权限"></a>方案二：改目录权限</h2><p><strong>使用方式如下：</strong></p><p>1.创建一个 user/group（如果已经存在则不加，比如 web 项目用的最多的<code>www-data</code> 就不用创建）</p><p>2.增加一个环境变量用于扩展自定义目录，比如：<code>ENV VOLUME_PATH=&#39;&#39;</code></p><p>3.创建一个 <code>docker-entrypoint.sh</code> 文件,并设置为 <code>ENTRYPOINT</code> 的脚本，如：<code>ENTRYPOINT [&quot;docker-entrypoint.sh&quot;]</code></p><p>4.在 <code>docker-entrypoint.sh</code> 中写脚本，使得第一次操作目录时更改目录的权限，如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> [ ! -z <span class="string">"<span class="variable">$&#123;VOLUME_PATH&#125;</span>"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="keyword">if</span> [ ! -d <span class="string">"/flag-volume-path"</span> ]; <span class="keyword">then</span></div><div class="line">        <span class="keyword">for</span> path <span class="keyword">in</span> <span class="variable">$&#123;VOLUME_PATH[@]&#125;</span> \</div><div class="line">        ; <span class="keyword">do</span></div><div class="line">            mkdir -p <span class="string">"<span class="variable">$path</span>"</span></div><div class="line">            chown -R www-data:www-data <span class="string">"<span class="variable">$path</span>"</span></div><div class="line">        <span class="keyword">done</span></div><div class="line">        mkdir /flag-volume-path</div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure><p>5.使用时更改环境变量，比如：<code>ENV VOLUME_PATH=/app/web/assets\ /app/runtime</code>，然后执行修改目录权限的操作，如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">RUN <span class="built_in">set</span> -ex \</div><div class="line">    &amp;&amp; <span class="keyword">for</span> path <span class="keyword">in</span> <span class="variable">$&#123;VOLUME_PATH&#125;</span> \</div><div class="line">    ; <span class="keyword">do</span> \</div><div class="line">        mkdir -p <span class="string">"<span class="variable">$path</span>"</span>; \</div><div class="line">        chmod 0777 <span class="string">"<span class="variable">$path</span>"</span>; \</div><div class="line">        chown -R www-data:www-data <span class="string">"<span class="variable">$path</span>"</span>; \</div><div class="line">    <span class="keyword">done</span></div></pre></td></tr></table></figure><p><strong>适用范围：</strong></p><p>项目的运行目录，比如缓存目录等。该方案动态可配置性较高，通过 <code>VOLUME_PATH</code> 可以配置多个目录（多目录配置方式为：<code>目录1\ 目录2\ 目录3</code>）</p><p>该方案的局限性在于多个容器共享目录的时候，可能会产生权限归属问题（暂未测试），因为每个容器的用户不能保持一致。</p><blockquote><p>参考：<a href="https://github.com/krissss/docker-yii2" target="_blank" rel="external">krissss/docker-yii2</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;docker volume 数据卷挂载宿主机时的权限问题处理方式&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="server" scheme="http://www.kriss.pub/categories/server/"/>
+    
+    
+      <category term="docker" scheme="http://www.kriss.pub/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker 比较常用的命令</title>
+    <link href="http://www.kriss.pub/2017/11/02/docker-commend/"/>
+    <id>http://www.kriss.pub/2017/11/02/docker-commend/</id>
+    <published>2017-11-02T05:40:36.000Z</published>
+    <updated>2020-04-20T11:08:25.032Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>整理一些 docker 常用的命令</p></blockquote><a id="more"></a><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>在有 Dockerfile 的目录下编译</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker build -t basic .</div></pre></td></tr></table></figure><p>说明：</p><ul><li><code>-t</code> 给镜像命名</li></ul><h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p><strong>前台运行一个容器</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --rm --name basic -p 81:80 -v /root/<span class="built_in">test</span>-volume/runtime:/app/runtime -v /root/<span class="built_in">test</span>-volume/web:/app/web/assets basic</div></pre></td></tr></table></figure><p>说明：</p><ul><li><p><code>--rm</code> 停止后移除该容器，可以避免下次执行 run 时报容器已经存在的错误</p></li><li><p><code>--name</code> 命名容器名，有助于后续对容器进行操作，比如停止容器 <code>docker stop basic</code></p></li><li><p><code>-p</code> 端口映射，宿主机:容器</p></li><li><p><code>-v</code> 数据卷映射，宿主机:容器</p></li></ul><p><strong>后台运行一个容器</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --rm --name basic -p 81:80 -v /root/<span class="built_in">test</span>-volume/runtime:/app/runtime -v /root/<span class="built_in">test</span>-volume/web:/app/web/assets -d basic</div></pre></td></tr></table></figure><p>说明：</p><ul><li><code>-d</code> 后台运行</li></ul><p><strong>运行一个容器，并进入容器（不会执行 ENTRYPOINT 和 CMD）</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --rm --name -it basic -p 81:80 -v /root/<span class="built_in">test</span>-volume/runtime:/app/runtime -v /root/<span class="built_in">test</span>-volume/web:/app/web/assets -d basic /bin/bash</div></pre></td></tr></table></figure><ul><li><code>-it</code> 交互运行，并执行一个命令。一般跟随在命令最后面使用 <code>/bin/bash</code>,进入容器内部</li></ul><p><strong>进入一个已经运行的容器内部</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">exec</span> -it basic /bin/bash</div></pre></td></tr></table></figure><p>说明：</p><ul><li>可以使用 <code>exit</code> 退出容器，并且不会停止容器</li></ul><h2 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h2><p><strong>当前所有镜像</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images</div></pre></td></tr></table></figure><p><strong>当前所有容器</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -a</div></pre></td></tr></table></figure><p>说明：</p><ul><li><code>-a</code> 可以使用 <code>exit</code> 退出容器，并且不会停止容器</li></ul><h2 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h2><p><strong>杀死所有正在运行的容器</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">kill</span> $(docker ps -a -q)</div></pre></td></tr></table></figure><p><strong>删除所有已经停止的容器</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm $(docker ps -a -q)</div></pre></td></tr></table></figure><p><strong>删除所有未打 dangling 标签的镜像</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q -f dangling=<span class="literal">true</span>)</div></pre></td></tr></table></figure><p><strong>删除所有镜像</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;整理一些 docker 常用的命令&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="server" scheme="http://www.kriss.pub/categories/server/"/>
+    
+    
+      <category term="gist" scheme="http://www.kriss.pub/tags/gist/"/>
+    
+      <category term="docker" scheme="http://www.kriss.pub/tags/docker/"/>
+    
+  </entry>
+  
+</feed>
